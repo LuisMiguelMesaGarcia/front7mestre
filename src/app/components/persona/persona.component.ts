@@ -2,14 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Services/api.service';
 
 @Component({
-  selector: 'app-permisos',
-  templateUrl: './permisos.component.html',
-  styleUrls: ['./permisos.component.css']
+  selector: 'app-persona',
+  templateUrl: './persona.component.html',
+  styleUrls: ['./persona.component.css']
 })
-export class PermisosComponent implements OnInit {
+export class PersonaComponent implements OnInit {
+  
   constructor(public api:ApiService){}
+
   ngOnInit(): void {
-    var response = this.api.getAll("ModuloPermisoes")
+    var response = this.api.getAll("Personas")
     console.log(response)
   }
+
+
 }
