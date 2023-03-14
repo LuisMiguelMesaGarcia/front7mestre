@@ -30,6 +30,9 @@ import { TablaComponent } from './components/tabla/tabla.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { PersonaComponent } from './components/persona/persona.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -46,8 +49,10 @@ import { MatSortModule } from '@angular/material/sort';
     HomeComponent,
     FormComponent,
     TablaComponent,
+    PersonaComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

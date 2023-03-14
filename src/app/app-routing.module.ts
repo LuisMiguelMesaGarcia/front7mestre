@@ -6,6 +6,7 @@ import { FormComponent } from './components/form/form.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PermisosComponent } from './components/permisos/permisos.component';
+import { PersonaComponent } from './components/persona/persona.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
 import { RegistroLoginComponent } from './components/registro-login/registro-login.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:"Permisos", component: PermisosComponent},
   {path:"Factura", component: FacturaComponent},
   {path:"Form", component: FormComponent},
-  {path:"Tabla", component: TablaComponent}
+  {path:"Tabla", component: TablaComponent},
+  {path:"Persona", component: PersonaComponent}
 ];
 
 @NgModule({
