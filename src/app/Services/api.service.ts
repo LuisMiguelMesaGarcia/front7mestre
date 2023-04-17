@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
   
 
@@ -22,25 +23,35 @@ export class ApiService {
 
     async getById(Controller: string, id: number){
       var response:any;
-       await this.http.get(this.url+Controller+'/'+id).toPromise().then((res=>{
+       await this.http.get(this.url+Controller+'/'+id).subscribe((res=>{
         response=res;
       }))
       return response;
     }
 
-    async delete(Controller: string, id: number){
+    async delete(Controller: string, id: string){
       var response:any;
-       await this.http.delete(this.url+Controller+'/'+id).toPromise().then((res=>{
+       await this.http.delete(this.url+Controller+'/'+id).subscribe((res=>{
         response=res;
       }))
     }
 
     
-    async post(Controller: string, objeto:object){
+    async post(Controller: string, body:any){
       var response:any;
-      await this.http.post(this.url+Controller, objeto).toPromise().then((res=>{
+      await this.http.post(this.url+Controller, body).subscribe((res=>{
         response=res;
       }))
+
+      return response;
+    }
+
+    async put(Controller: string, id:string, body:any){
+      var response:any;
+      await this.http.post(this.url+Controller+"/"+id, body).subscribe((res=>{
+        response=res;
+      }))
+
       return response;
     }
 
