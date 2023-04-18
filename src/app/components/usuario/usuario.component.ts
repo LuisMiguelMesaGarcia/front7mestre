@@ -30,9 +30,6 @@ export class UsuarioComponent implements OnInit{
     this.dataSource.sort = this.sort;
   }
 
-  // public getUsuario(){
-  //   this.api.getAll("Productoes");
-  // }
   public async getUsuario(){
     await this.api.getAll("usuario").then((res)=> {
     for (let index=0; index < res.length; index++){

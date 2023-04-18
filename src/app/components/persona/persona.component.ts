@@ -30,11 +30,8 @@ export class PersonaComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  // public getPersona(){
-  //   this.api.getAll("Productoes");
-  // }
   public async getPersona(){
-    await this.api.getAll("Persona").then((res)=> {
+    await this.api.getAll("Personas").then((res)=> {
     for (let index=0; index < res.length; index++){
     this.loadTable([res[index]])
     } 

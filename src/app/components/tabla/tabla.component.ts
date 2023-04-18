@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { TablaDataSource, TablaItem } from './tabla-datasource';
+import { ApiService } from 'src/app/Services/api.service';
 
 @Component({
   selector: 'app-tabla',
@@ -10,21 +11,48 @@ import { TablaDataSource, TablaItem } from './tabla-datasource';
   styleUrls: ['./tabla.component.css']
 })
 export class TablaComponent implements AfterViewInit {
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<TablaItem>;
-  dataSource: TablaDataSource;
+  displayedColumns: string[] = [];
+  dataSource: MatTableDataSource<any>;
+  
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
-
-  constructor() {
-    this.dataSource = new TablaDataSource();
+  constructor(public api:ApiService){
+    this.dataSource= new MatTableDataSource
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
+  ngOnInit(): void {
+    this.getCarrito();
+  }
+
+  ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    this.dataSource.sort = this.sort;
+  }
+
+  public async getCarrito(){
+    await this.api.getAll("CarritoCompras").then((res)=> {
+    for (let index=0; index < res.length; index++){
+    this.loadTable([res[index]])
+    } 
+    this.dataSource.data=res;
+    })
+    
+  }
+
+  public loadTable(data:any[]){
+    this.displayedColumns=[];
+    for(let colummns in data[0]){
+      this.displayedColumns.push(colummns);
+    }
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
   }
 }
