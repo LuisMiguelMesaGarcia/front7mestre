@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarritoCompraComponent } from './components/carrito-compra/carrito-compra.component';
 import { FacturaComponent } from './components/factura/factura.component';
-import { FormComponent } from './components/form/form.component';
+import { FormComponent } from './components/Forms/form/form.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { PermisosComponent } from './components/permisos/permisos.component';

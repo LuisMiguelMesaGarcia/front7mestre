@@ -34,7 +34,7 @@ export class UsuarioComponent implements OnInit{
   //   this.api.getAll("Productoes");
   // }
   public async getUsuario(){
-    await this.api.getAll("usuario").then((res)=> {
+    await this.api.getAll("Usuario").then((res)=> {
     for (let index=0; index < res.length; index++){
     this.loadTable([res[index]])
     } 

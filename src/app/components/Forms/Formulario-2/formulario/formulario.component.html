@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="src\app\components\Forms\Formulario-2\formulario\formulario.component.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="title" class="text-center">Formulario Registro</h1>
+            <p id="description" class="description text-center">
+                Registro de usuarios
+            </p>
+        </header>
+        <form id="survey-form">
+            <div class="form-group">
+                <label id="name-label" for="name">Nombre</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese su nombre" required />
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="email">Correo Electronico</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo electronico"
+                    required />
+            </div>
+            <div class="form-group">
+                <label id="contraseña-label" for="email">Contraseña</label>
+                <input type="contraseña" name="contraseña" id="contraseña" class="form-control" placeholder="Ingrese su contraseña"
+                    required />
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="number">Edad<span class="clue">(optional)</span></label>
+                <input type="number" name="age" id="number" min="16" max="99" class="form-control" placeholder="Edad" />
+            </div>
+            <div class="form-group">
+                <p>¿Actualmente corresponde a?</p>
+                <select id="dropdown" name="role" class="form-control" required>
+                    <option disabled selected value>Selecione una opcion</option>
+                    <option value="student">usuario</option>
+                    <option value="job">Administrador</option>
+                    <option value="learner">vendedor</option>
+                    <option value="preferNo">analista</option>
+                    <option value="other">Otro tipo describa cual</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <p>¿Algún comentario o sugerencia?-</p>
+                <textarea id="comments" class="input-textarea" name="comment"
+                    placeholder="Escribe un comentario aqui..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

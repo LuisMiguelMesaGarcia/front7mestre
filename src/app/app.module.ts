@@ -20,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { FormComponent } from './components/form/form.component';
+import { FormComponent } from './components/Forms/form/form.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
@@ -32,6 +32,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { PersonaComponent } from './components/persona/persona.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormularioComponent } from './components/Forms/Formulario-2/formulario/formulario.component';
 
 
 
@@ -52,6 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     TablaComponent,
     PersonaComponent,
+    FormularioComponent,
   ],
   imports: [
     HttpClientModule,
