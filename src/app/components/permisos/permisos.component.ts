@@ -28,12 +28,9 @@ export class PermisosComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
-  // public getPermisos(){
-  //   this.api.getAll("Productoes");
-  // }
+  
   public async getPermisos(){
-    await this.api.getAll("Modulo_permiso").then((res)=> {
+    await this.api.getAll("ModuloPermisoes").then((res)=> {
     for (let index=0; index < res.length; index++){
     this.loadTable([res[index]])
     } 

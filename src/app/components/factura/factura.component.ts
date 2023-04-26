@@ -30,11 +30,8 @@ export class FacturaComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  // public getFactura(){
-  //   this.api.getAll("Productoes");
-  // }
   public async getFactura(){
-    await this.api.getAll("Factura").then((res)=> {
+    await this.api.getAll("Facturas").then((res)=> {
     for (let index=0; index < res.length; index++){
     this.loadTable([res[index]])
     } 

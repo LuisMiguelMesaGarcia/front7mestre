@@ -29,9 +29,6 @@ export class ProductosComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  // public getProductos(){
-  //   this.api.getAll("Productoes");
-  // }
   public async getProductos(){
     await this.api.getAll("Productoes").then((res)=> {
     for (let index=0; index < res.length; index++){
