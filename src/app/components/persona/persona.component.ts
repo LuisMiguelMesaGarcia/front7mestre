@@ -11,7 +11,8 @@ import { ApiService } from 'src/app/Services/api.service';
 })
 export class PersonaComponent implements OnInit {
   
-  displayedColumns: string[] = [];
+  title: string= "Personas";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;

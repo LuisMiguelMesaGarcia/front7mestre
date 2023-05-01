@@ -10,7 +10,8 @@ import { ApiService } from 'src/app/Services/api.service';
   styleUrls: ['./publicidad.component.css']
 })
 export class PublicidadComponent implements OnInit{
-  displayedColumns: string[] = [];
+  title: string= "Publicidad";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;

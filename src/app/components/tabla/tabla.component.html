@@ -4,6 +4,7 @@
 </mat-form-field>
 
 <div class="mat-elevation-z8">
+  <h1>{{title}}</h1>
   <table mat-table [dataSource]="dataSource" matSort>  
     <!-- ID Column -->
     <ng-container matColumnDef="{{disCol}}" *ngFor="let disCol of displayedColumns">

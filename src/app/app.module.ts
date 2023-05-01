@@ -32,7 +32,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { PersonaComponent } from './components/persona/persona.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormularioComponent } from './components/Forms/Formulario-2/formulario/formulario.component';
+// import { FormularioComponent } from './components/Forms/Formulario-2/formulario/formulario.component';
 
 
 
@@ -53,7 +53,7 @@ import { FormularioComponent } from './components/Forms/Formulario-2/formulario/
     FormComponent,
     TablaComponent,
     PersonaComponent,
-    FormularioComponent,
+    // FormularioComponent,
   ],
   imports: [
     HttpClientModule,

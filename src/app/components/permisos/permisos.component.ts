@@ -10,7 +10,8 @@ import { ApiService } from 'src/app/Services/api.service';
   styleUrls: ['./permisos.component.css']
 })
 export class PermisosComponent implements OnInit {
-  displayedColumns: string[] = [];
+  title: string= "Permisos";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;

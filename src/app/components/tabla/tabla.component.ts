@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { OnInit, Component, ViewChild, Input } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
@@ -10,9 +10,10 @@ import { ApiService } from 'src/app/Services/api.service';
   templateUrl: './tabla.component.html',
   styleUrls: ['./tabla.component.css']
 })
-export class TablaComponent implements AfterViewInit {
-  displayedColumns: string[] = [];
-  dataSource: MatTableDataSource<any>;
+export class TablaComponent implements OnInit {
+  @Input() title:string;
+  @Input() displayedColumns: string[];
+  @Input() dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -22,29 +23,6 @@ export class TablaComponent implements AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getCarrito();
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  public async getCarrito(){
-    await this.api.getAll("CarritoCompras").then((res)=> {
-    for (let index=0; index < res.length; index++){
-    this.loadTable([res[index]])
-    } 
-    this.dataSource.data=res;
-    })
-    
-  }
-
-  public loadTable(data:any[]){
-    this.displayedColumns=[];
-    for(let colummns in data[0]){
-      this.displayedColumns.push(colummns);
-    }
   }
 
   applyFilter(event: Event) {

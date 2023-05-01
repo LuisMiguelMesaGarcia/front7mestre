@@ -11,7 +11,8 @@ import { ApiService } from 'src/app/Services/api.service';
 })
 export class FacturaComponent implements OnInit {
   
-  displayedColumns: string[] = [];
+  title: string= "Factura";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;

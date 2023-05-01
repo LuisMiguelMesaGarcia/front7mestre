@@ -11,7 +11,8 @@ import { ApiService } from 'src/app/Services/api.service';
 })
 export class CarritoCompraComponent implements OnInit {
   
-  displayedColumns: string[] = [];
+  title: string= "Carrito de Compras";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;

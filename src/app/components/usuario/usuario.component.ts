@@ -10,8 +10,8 @@ import { ApiService } from 'src/app/Services/api.service';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent implements OnInit{
-
-  displayedColumns: string[] = [];
+  title: string= "Usuarios";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -31,7 +31,7 @@ export class UsuarioComponent implements OnInit{
   }
 
   public async getUsuario(){
-    await this.api.getAll("Usuario").then((res)=> {
+    await this.api.getAll("Usuarios").then((res)=> {
     for (let index=0; index < res.length; index++){
     this.loadTable([res[index]])
     } 

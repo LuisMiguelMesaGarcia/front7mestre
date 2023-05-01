@@ -10,7 +10,8 @@ import { ApiService } from 'src/app/Services/api.service';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-  displayedColumns: string[] = [];
+  title: string= "Productos";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -31,9 +32,7 @@ export class ProductosComponent implements OnInit {
 
   public async getProductos(){
     await this.api.getAll("Productoes").then((res)=> {
-    for (let index=0; index < res.length; index++){
-    this.loadTable([res[index]])
-    } 
+    this.loadTable([res[0]])
     this.dataSource.data=res;
     })
     

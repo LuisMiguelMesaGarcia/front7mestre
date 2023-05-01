@@ -10,7 +10,8 @@ import { ApiService } from 'src/app/Services/api.service';
   styleUrls: ['./registro-login.component.css']
 })
 export class RegistroLoginComponent implements OnInit {
-  displayedColumns: string[] = [];
+  title: string= "Registro Login";
+  displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
