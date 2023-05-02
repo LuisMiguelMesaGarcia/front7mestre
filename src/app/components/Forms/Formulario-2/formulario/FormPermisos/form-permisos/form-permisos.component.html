@@ -1,0 +1,44 @@
+<div class="full-width">
+    <div class="form-container">
+      <h2>Permisos</h2>
+      <form [formGroup]="permisosForm">
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Modulo</mat-label>
+              <mat-select formControlName="modulo">
+                <mat-option value="Ventas">Ventas</mat-option>
+                <mat-option value="Productos">Productos</mat-option>
+                <mat-option value="Clientes">Clientes</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Rol</mat-label>
+              <mat-select formControlName="rol">
+                <mat-option value="Administrador">Administrador</mat-option>
+                <mat-option value="Empleado">Empleado</mat-option>
+                <mat-option value="Cliente">Cliente</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field appearance="fill">
+              <mat-label>Estado de permiso</mat-label>
+              <mat-select formControlName="estadoPermiso">
+                <mat-option value="Habilitado">Habilitado</mat-option>
+                <mat-option value="Cancelado">Cancelado</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <button mat-raised-button color="primary" (click)="submitForm()">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

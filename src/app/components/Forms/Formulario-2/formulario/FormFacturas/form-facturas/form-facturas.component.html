@@ -1,0 +1,36 @@
+<form [formGroup]="invoiceForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="invoice-card">
+      <mat-card-header>
+        <mat-card-title>Invoice Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Status" formControlName="status">
+                <mat-option value="canceled">Canceled</mat-option>
+                <mat-option value="purchased">Purchased</mat-option>
+                <mat-option value="in_progress">In Progress</mat-option>
+              </mat-select>
+              <mat-error *ngIf="invoiceForm.controls['status'].hasError('required')">
+                Status is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
