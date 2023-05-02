@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormularioComponent } from './formulario.component';
+import { FormFacturasComponent } from './form-facturas.component';
 
-describe('FormularioComponent', () => {
-  let component: FormularioComponent;
-  let fixture: ComponentFixture<FormularioComponent>;
+describe('FormFacturasComponent', () => {
+  let component: FormFacturasComponent;
+  let fixture: ComponentFixture<FormFacturasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormularioComponent ]
+      declarations: [ FormFacturasComponent ]
     })
     .compileComponents();
 
-    
-    fixture = TestBed.createComponent(FormularioComponent);
+    fixture = TestBed.createComponent(FormFacturasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +20,5 @@ describe('FormularioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

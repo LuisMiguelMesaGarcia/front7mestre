@@ -1,0 +1,52 @@
+<form [formGroup]="productForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="product-card">
+      <mat-card-header>
+        <mat-card-title>Información del producto</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Nombre del producto" formControlName="productName">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Precio del producto" formControlName="productPrice">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Categoría del producto" formControlName="productCategory">
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Existencias del producto" formControlName="productStock">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Imagen del producto" type="file" formControlName="productImage">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Descripción del producto" formControlName="productDescription"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Guardar</button>
+      </mat-card-actions>
+   
+    </mat-card>
+  </form>
+  
