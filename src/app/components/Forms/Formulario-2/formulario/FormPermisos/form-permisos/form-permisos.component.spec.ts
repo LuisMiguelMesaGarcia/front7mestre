@@ -12,6 +12,7 @@ describe('FormPermisosComponent', () => {
     })
     .compileComponents();
 
+    
     fixture = TestBed.createComponent(FormPermisosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

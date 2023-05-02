@@ -12,6 +12,7 @@ export class FormProductosComponent {
 
   constructor(private formBuilder: FormBuilder) { }
 
+  
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
       productName: ['', Validators.required],

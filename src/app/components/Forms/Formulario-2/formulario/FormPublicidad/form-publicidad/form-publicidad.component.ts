@@ -13,6 +13,7 @@ export class FormPublicidadComponent {
   imageFile: File;
   priceRanges = ['$10 - $50', '$50 - $100', '$100 - $200']; // Rangos de precios
 
+  
   constructor(private fb: FormBuilder) {
     this.advertisingForm = this.fb.group({
       adType: ['', Validators.required],

@@ -11,6 +11,7 @@ export class FormPermisosComponent {
 
   constructor(private formBuilder: FormBuilder) { }
 
+  
   ngOnInit(): void {
     this.permisosForm = this.formBuilder.group({
       modulo: ['', Validators.required],

@@ -11,6 +11,7 @@ describe('FormPersonasComponent', () => {
       declarations: [ FormPersonasComponent ]
     })
     .compileComponents();
+    
 
     fixture = TestBed.createComponent(FormPersonasComponent);
     component = fixture.componentInstance;

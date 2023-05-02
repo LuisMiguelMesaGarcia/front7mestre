@@ -12,6 +12,7 @@ describe('FormularioComponent', () => {
     })
     .compileComponents();
 
+    
     fixture = TestBed.createComponent(FormularioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

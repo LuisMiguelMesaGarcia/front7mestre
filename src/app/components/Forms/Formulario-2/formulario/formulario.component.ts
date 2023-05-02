@@ -7,4 +7,5 @@ styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
 
+    
 }
