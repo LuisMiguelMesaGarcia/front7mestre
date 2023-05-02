@@ -1,62 +1,101 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="src\app\components\Forms\Formulario-2\formulario\formulario.component.css" />
-</head>
-
-<body>
-    <div class="container">
-        <header class="header">
-            <h1 id="title" class="text-center">Formulario Registro</h1>
-            <p id="description" class="description text-center">
-                Registro de usuarios
-            </p>
-        </header>
-        <form id="survey-form">
-            <div class="form-group">
-                <label id="name-label" for="name">Nombre</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese su nombre" required />
-            </div>
-            <div class="form-group">
-                <label id="email-label" for="email">Correo Electronico</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Ingrese su correo electronico"
-                    required />
-            </div>
-            <div class="form-group">
-                <label id="contraseña-label" for="email">Contraseña</label>
-                <input type="contraseña" name="contraseña" id="contraseña" class="form-control" placeholder="Ingrese su contraseña"
-                    required />
-            </div>
-            <div class="form-group">
-                <label id="number-label" for="number">Edad<span class="clue">(optional)</span></label>
-                <input type="number" name="age" id="number" min="16" max="99" class="form-control" placeholder="Edad" />
-            </div>
-            <div class="form-group">
-                <p>¿Actualmente corresponde a?</p>
-                <select id="dropdown" name="role" class="form-control" required>
-                    <option disabled selected value>Selecione una opcion</option>
-                    <option value="student">usuario</option>
-                    <option value="job">Administrador</option>
-                    <option value="learner">vendedor</option>
-                    <option value="preferNo">analista</option>
-                    <option value="other">Otro tipo describa cual</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <p>¿Algún comentario o sugerencia?-</p>
-                <textarea id="comments" class="input-textarea" name="comment"
-                    placeholder="Escribe un comentario aqui..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <button type="submit" id="submit" class="submit-button">
-                    Enviar
-                </button>
-            </div>
-        </form>
-    </div>
-</body>
-
-</html>
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Shipping Information</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Company" formControlName="company">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="First name" formControlName="firstName">
+              <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+                First name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Last name" formControlName="lastName">
+              <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+                Last name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Address" formControlName="address"></textarea>
+              <mat-error *ngIf="addressForm.controls['address'].hasError('required')">
+                Address is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row" *ngIf="!hasUnitNumber">
+          <div class="col">
+            <button mat-button type="button" (click)="hasUnitNumber = !hasUnitNumber">
+              + Add C/O, Apt, Suite, Unit
+            </button>
+          </div>
+        </div>
+        <div class="row" *ngIf="hasUnitNumber">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Address 2" formControlName="address2"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="City" formControlName="city">
+              <mat-error *ngIf="addressForm.controls['city'].hasError('required')">
+                City is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="State" formControlName="state">
+                <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                  {{ state.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="addressForm.controls['state'].hasError('required')">
+                State is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput #postalCode maxlength="5" placeholder="Postal Code" type="number" formControlName="postalCode">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-radio-group formControlName="shipping">
+              <mat-radio-button value="free">Free Shipping</mat-radio-button>
+              <mat-radio-button value="priority">Priority Shipping</mat-radio-button>
+              <mat-radio-button value="nextday">Next Day Shipping</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  

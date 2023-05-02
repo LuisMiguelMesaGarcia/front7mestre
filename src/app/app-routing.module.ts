@@ -10,6 +10,7 @@ import { PersonaComponent } from './components/persona/persona.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PublicidadComponent } from './components/publicidad/publicidad.component';
 import { RegistroLoginComponent } from './components/registro-login/registro-login.component';
+import { TablaComponent } from './components/tabla/tabla.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:"Permisos", component: PermisosComponent},
   {path:"Factura", component: FacturaComponent},
   {path:"Form", component: FormComponent},
+  {path:"Tabla", component: TablaComponent},
   {path:"Persona", component: PersonaComponent}
 ];
 
