@@ -2,14 +2,16 @@
     width: 100%;
   }
   
-  .shipping-card {
-    min-width: 120px;
-    margin: 20px auto;
+  .form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   
-  .mat-radio-button {
-    display: block;
-    margin: 5px 0;
+  .mat-form-field {
+    margin-bottom: 20px;
   }
   
   .row {

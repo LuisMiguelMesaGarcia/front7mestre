@@ -1,0 +1,64 @@
+<form [formGroup]="adForm" (ngSubmit)="onSubmit()">
+    <mat-card class="ad-card">
+      <mat-card-header>
+        <mat-card-title>Crear anuncio publicitario</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Tipo de publicidad" formControlName="tipo">
+                <mat-option value="ofertas">Ofertas</mat-option>
+                <mat-option value="nuevos productos">Nuevos productos</mat-option>
+                <mat-option value="eventos especiales">Eventos especiales</mat-option>
+                <mat-option value="descuentos">Descuentos</mat-option>
+              </mat-select>
+              <mat-error *ngIf="adForm.controls['tipo'].hasError('required')">
+                Seleccione un tipo de publicidad
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="file" accept="image/*" formControlName="imagen">
+              <mat-error *ngIf="adForm.controls['imagen'].hasError('required')">
+                Seleccione una imagen para el anuncio
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="date" placeholder="Inicio" formControlName="inicio">
+              <mat-error *ngIf="adForm.controls['inicio'].hasError('required')">
+                Ingrese la fecha de inicio de la publicidad
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="date" placeholder="Final" formControlName="final">
+              <mat-error *ngIf="adForm.controls['final'].hasError('required')">
+                Ingrese la fecha de finalización de la publicidad
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput type="number" placeholder="Precio" formControlName="precio">
+              <mat-error *ngIf="adForm.controls['precio'].hasError('required')">
+                Ingrese el precio del anuncio
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Crear anuncio</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  

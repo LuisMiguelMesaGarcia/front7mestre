@@ -2,14 +2,9 @@
     width: 100%;
   }
   
-  .shipping-card {
+  .invoice-card {
     min-width: 120px;
     margin: 20px auto;
-  }
-  
-  .mat-radio-button {
-    display: block;
-    margin: 5px 0;
   }
   
   .row {
@@ -25,4 +20,3 @@
   .col:last-child {
     margin-right: 0;
   }
-  

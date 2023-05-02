@@ -1,0 +1,78 @@
+<form [formGroup]="personForm" novalidate (ngSubmit)="onSubmit()">
+    <mat-card class="registration-card">
+      <mat-card-header>
+        <mat-card-title>Registro de Personas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Tipo de documento" formControlName="documentType">
+                <mat-option value="dni">DNI</mat-option>
+                <mat-option value="cedula">Cédula</mat-option>
+                <mat-option value="pasaporte">Pasaporte</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Número de documento" formControlName="documentNumber">
+              <mat-error *ngIf="personForm.controls['documentNumber'].hasError('required')">
+                Número de documento es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Nombre" formControlName="firstName">
+              <mat-error *ngIf="personForm.controls['firstName'].hasError('required')">
+                Nombre es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Apellidos" formControlName="lastName">
+              <mat-error *ngIf="personForm.controls['lastName'].hasError('required')">
+                Apellidos son <strong>obligatorios</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Teléfono" formControlName="phoneNumber">
+              <mat-error *ngIf="personForm.controls['phoneNumber'].hasError('required')">
+                Teléfono es <strong>obligatorio</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Dirección" formControlName="address"></textarea>
+              <mat-error *ngIf="personForm.controls['address'].hasError('required')">
+                Dirección es <strong>obligatoria</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Rol" formControlName="role">
+                <mat-option value="admin">Administrador</mat-option>
+                <mat-option value="user">Usuario</mat-option>
+                <mat-option value="other">Otros</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color
+  

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
@@ -32,7 +31,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { PersonaComponent } from './components/persona/persona.component';
 import { HttpClientModule } from '@angular/common/http';
-// import { FormularioComponent } from './components/Forms/Formulario-2/formulario/formulario.component';
+import { FormularioComponent } from './components/Forms/Formulario-2/formulario/formulario.component';
+import { FormUsuarioComponent } from './components/Forms/Formulario-2/formulario/FormUsuario/form-usuario/form-usuario.component';
+import { FormPublicidadComponent } from './components/Forms/Formulario-2/formulario/FormPublicidad/form-publicidad/form-publicidad.component';
+import { FormProductosComponent } from './components/Forms/Formulario-2/formulario/FormProductos/form-productos/form-productos.component';
+import { FormPersonasComponent } from './components/Forms/Formulario-2/formulario/FormPersonas/form-personas/form-personas.component';
+import { FormPermisosComponent } from './components/Forms/Formulario-2/formulario/FormPermisos/form-permisos/form-permisos.component';
+import { FormFacturasComponent } from './components/Forms/Formulario-2/formulario/FormFacturas/form-facturas/form-facturas.component';
 
 
 
@@ -53,7 +58,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     TablaComponent,
     PersonaComponent,
-    // FormularioComponent,
+    FormularioComponent,
+    FormUsuarioComponent,
+    FormPublicidadComponent,
+    FormProductosComponent,
+    FormPersonasComponent,
+    FormPermisosComponent,
+    FormFacturasComponent,
   ],
   imports: [
     HttpClientModule,

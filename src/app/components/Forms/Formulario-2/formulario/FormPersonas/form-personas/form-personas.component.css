@@ -2,14 +2,9 @@
     width: 100%;
   }
   
-  .shipping-card {
+  .registration-card {
     min-width: 120px;
     margin: 20px auto;
-  }
-  
-  .mat-radio-button {
-    display: block;
-    margin: 5px 0;
   }
   
   .row {
@@ -26,3 +21,7 @@
     margin-right: 0;
   }
   
+  .mat-radio-button {
+    display: block;
+    margin: 5px 0;
+  }
