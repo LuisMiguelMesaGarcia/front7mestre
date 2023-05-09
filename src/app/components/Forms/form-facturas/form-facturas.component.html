@@ -11,6 +11,9 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+            <mat-error *ngIf="invoiceForm.controls['date'].hasError('required')">
+              Status es <strong>required</strong>
+            </mat-error>
           </div>
         </div>
         <div class="row">

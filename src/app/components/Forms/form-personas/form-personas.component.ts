@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-personas.component.css']
 })
 export class FormPersonasComponent {
-  registrationForm: FormGroup;
+  personForm: FormGroup;
   roles = ['Administrator', 'User', 'Other'];
 
   constructor(private fb: FormBuilder) { }
@@ -18,7 +18,7 @@ export class FormPersonasComponent {
   }
 
   createForm(): void {
-    this.registrationForm = this.fb.group({
+    this.personForm = this.fb.group({
       documentType: ['', Validators.required],
       documentNumber: ['', Validators.required],
       firstName: ['', Validators.required],
@@ -30,6 +30,6 @@ export class FormPersonasComponent {
   }
 
   onSubmit(): void {
-    console.log(this.registrationForm.value);
+    console.log(this.personForm.value);
   }
 }
