@@ -9,9 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormPublicidadComponent {
   
   advertisingForm: FormGroup;
-  adTypes = ['Banner', 'Pop-up', 'Video', 'Redes sociales']; // Categorías de publicidad
-  imageFile: File;
-  priceRanges = ['$10 - $50', '$50 - $100', '$100 - $200']; // Rangos de precios
+  // adTypes = ['Banner', 'Pop-up', 'Video', 'Redes sociales']; // Categorías de publicidad
+  // imageFile: File;
+  // priceRanges = ['$10 - $50', '$50 - $100', '$100 - $200']; // Rangos de precios
 
   
   constructor(private fb: FormBuilder) {
@@ -25,23 +25,24 @@ export class FormPublicidadComponent {
   }
 
   onSubmit() {
-    if (this.advertisingForm.valid) {
-      const formData = new FormData();
-      formData.append('adType', this.advertisingForm.get('adType').value);
-      formData.append('image', this.imageFile);
-      formData.append('startDate', this.advertisingForm.get('startDate').value);
-      formData.append('endDate', this.advertisingForm.get('endDate').value);
-      formData.append('priceRange', this.advertisingForm.get('priceRange').value);
-      // Aquí enviarías los datos a un servidor
-      console.log(formData);
-    }
+    console.log(this.advertisingForm.value);
+    // if (this.advertisingForm.valid) {
+    //   const formData = new FormData();
+    //   formData.append('adType', this.advertisingForm.get('adType').value);
+    //   formData.append('image', this.imageFile);
+    //   formData.append('startDate', this.advertisingForm.get('startDate').value);
+    //   formData.append('endDate', this.advertisingForm.get('endDate').value);
+    //   formData.append('priceRange', this.advertisingForm.get('priceRange').value);
+    //   // Aquí enviarías los datos a un servidor
+    //   console.log(formData);
+    // }
   }
 
-  onFileChange(event: any) {
-    if (event.target.files.length > 0) {
-      this.imageFile = event.target.files[0];
-    }
-  }
+  // onFileChange(event: any) {
+  //   if (event.target.files.length > 0) {
+  //     // this.imageFile = event.target.files[0];
+  //   }
+  // }
 
   //Explicación:
 

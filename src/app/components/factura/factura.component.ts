@@ -14,9 +14,6 @@ export class FacturaComponent implements OnInit {
   title: string= "Factura";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
-  
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(public api:ApiService){
     this.dataSource= new MatTableDataSource
@@ -26,10 +23,6 @@ export class FacturaComponent implements OnInit {
     this.getFactura();
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
 
   public async getFactura(){
     await this.api.getAll("Facturas").then((res)=> {
@@ -48,13 +41,6 @@ export class FacturaComponent implements OnInit {
     }
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
 
 }

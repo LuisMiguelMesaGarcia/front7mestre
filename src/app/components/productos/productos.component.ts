@@ -25,17 +25,11 @@ export class ProductosComponent implements OnInit {
     this.getProductos();
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
   public async getProductos(){
     await this.api.getAll("Productoes").then((res)=> {
     this.loadTable([res[0]])
     this.dataSource.data=res;
     })
-    
   }
 
   public loadTable(data:any[]){

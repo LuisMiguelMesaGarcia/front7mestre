@@ -8,30 +8,49 @@
           <div class="col">
             <mat-form-field class="full-width">
               <input matInput placeholder="Nombre del producto" formControlName="productName">
+              <mat-error *ngIf="productForm.controls['productName'].hasError('required')">
+                Nombre <strong>obligatorio</strong>
+              </mat-error>
             </mat-form-field>
+            
           </div>
           <div class="col">
             <mat-form-field class="full-width">
               <input matInput placeholder="Precio del producto" formControlName="productPrice">
+              <mat-error *ngIf="productForm.controls['productPrice'].hasError('required')">
+                Precio del producto <strong>obligatorio</strong>
+              </mat-error>
             </mat-form-field>
+            
           </div>
         </div>
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
               <input matInput placeholder="Categoría del producto" formControlName="productCategory">
+              <mat-error *ngIf="productForm.controls['productCategory'].hasError('required')">
+                Categoria <strong>obligatoria</strong>
+              </mat-error>
             </mat-form-field>
+           
           </div>
           <div class="col">
             <mat-form-field class="full-width">
               <input matInput placeholder="Existencias del producto" formControlName="productStock">
+              <mat-error *ngIf="productForm.controls['productStock'].hasError('required')">
+                Existencias <strong>obligatorio</strong>
+              </mat-error>
             </mat-form-field>
+            
           </div>
         </div>
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Imagen del producto" type="file" formControlName="productImage">
+              <input matInput placeholder="Imagen del producto" type="text" formControlName="productImage">
+              <mat-error *ngIf="productForm.controls['productImage'].hasError('required')">
+                Imagen <strong>obligatoria</strong>
+              </mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -39,7 +58,11 @@
           <div class="col">
             <mat-form-field class="full-width">
               <textarea matInput placeholder="Descripción del producto" formControlName="productDescription"></textarea>
+              <mat-error *ngIf="productForm.controls['productDescription'].hasError('required')">
+                Descripcion <strong>obligatorio</strong>
+              </mat-error>
             </mat-form-field>
+            
           </div>
         </div>
       </mat-card-content>

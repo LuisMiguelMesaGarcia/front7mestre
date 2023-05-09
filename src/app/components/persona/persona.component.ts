@@ -14,9 +14,7 @@ export class PersonaComponent implements OnInit {
   title: string= "Personas";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
-  
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+
 
   constructor(public api:ApiService){
     this.dataSource= new MatTableDataSource
@@ -26,10 +24,6 @@ export class PersonaComponent implements OnInit {
     this.getPersona();
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
 
   public async getPersona(){
     await this.api.getAll("Personas").then((res)=> {
@@ -47,15 +41,5 @@ export class PersonaComponent implements OnInit {
       this.displayedColumns.push(colummns);
     }
   }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
 
 }

@@ -27,7 +27,8 @@ export class LoginComponent {
     this.pass = this.loginForm.controls["password"].value;
     if(this.em==="usuario" && this.pass==="12345678"){
       Swal.fire(
-        "Melo :D"
+        'Conexion exitosa!',
+        'Bienvenido!',
       )
       localStorage.setItem('login','login');
 

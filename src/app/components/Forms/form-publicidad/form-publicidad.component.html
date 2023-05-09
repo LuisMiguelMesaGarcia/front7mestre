@@ -1,4 +1,4 @@
-<form [formGroup]="adForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="advertisingForm" (ngSubmit)="onSubmit()">
     <mat-card class="ad-card">
       <mat-card-header>
         <mat-card-title>Crear anuncio publicitario</mat-card-title>
@@ -7,22 +7,22 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <mat-select placeholder="Tipo de publicidad" formControlName="tipo">
+              <mat-select placeholder="Tipo de publicidad" formControlName="adType">
                 <mat-option value="ofertas">Ofertas</mat-option>
                 <mat-option value="nuevos productos">Nuevos productos</mat-option>
                 <mat-option value="eventos especiales">Eventos especiales</mat-option>
                 <mat-option value="descuentos">Descuentos</mat-option>
               </mat-select>
               
-              <mat-error *ngIf="adForm.controls['tipo'].hasError('required')">
+              <mat-error *ngIf="advertisingForm.controls['adType'].hasError('required')">
                 Seleccione un tipo de publicidad
               </mat-error>
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput type="file" accept="image/*" formControlName="imagen">
-              <mat-error *ngIf="adForm.controls['imagen'].hasError('required')">
+              <input matInput placeholder="Ingrese una imagen" type="text" accept="image/*" formControlName="image">
+              <mat-error *ngIf="advertisingForm.controls['image'].hasError('required')">
                 Seleccione una imagen para el anuncio
               </mat-error>
             </mat-form-field>
@@ -31,16 +31,16 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput type="date" placeholder="Inicio" formControlName="inicio">
-              <mat-error *ngIf="adForm.controls['inicio'].hasError('required')">
+              <input matInput type="date" placeholder="Inicio" formControlName="startDate">
+              <mat-error *ngIf="advertisingForm.controls['startDate'].hasError('required')">
                 Ingrese la fecha de inicio de la publicidad
               </mat-error>
             </mat-form-field>
           </div>
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput type="date" placeholder="Final" formControlName="final">
-              <mat-error *ngIf="adForm.controls['final'].hasError('required')">
+              <input matInput type="date" placeholder="Final" formControlName="endDate">
+              <mat-error *ngIf="advertisingForm.controls['endDate'].hasError('required')">
                 Ingrese la fecha de finalización de la publicidad
               </mat-error>
             </mat-form-field>
@@ -49,8 +49,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput type="number" placeholder="Precio" formControlName="precio">
-              <mat-error *ngIf="adForm.controls['precio'].hasError('required')">
+              <input matInput type="number" placeholder="Precio" formControlName="priceRange">
+              <mat-error *ngIf="advertisingForm.controls['priceRange'].hasError('required')">
                 Ingrese el precio del anuncio
               </mat-error>
             </mat-form-field>

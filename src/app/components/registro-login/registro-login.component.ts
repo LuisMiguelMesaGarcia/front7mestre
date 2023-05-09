@@ -13,9 +13,6 @@ export class RegistroLoginComponent implements OnInit {
   title: string= "Registro Login";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
-  
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor(public api:ApiService){
     this.dataSource= new MatTableDataSource
@@ -23,11 +20,6 @@ export class RegistroLoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRegLogin();
-  }
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
 
@@ -38,7 +30,6 @@ export class RegistroLoginComponent implements OnInit {
     } 
     this.dataSource.data=res;
     })
-    
   }
 
   public loadTable(data:any[]){
@@ -48,12 +39,4 @@ export class RegistroLoginComponent implements OnInit {
     }
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
 }
