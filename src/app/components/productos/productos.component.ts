@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import Swal from 'sweetalert2';
+import { FormProductosComponent } from '../Forms/form-productos/form-productos.component';
 
 @Component({
   selector: 'app-productos',
@@ -13,6 +15,7 @@ export class ProductosComponent implements OnInit {
   title: string= "Productos";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
+  formComponente: any = FormProductosComponent;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -37,7 +40,11 @@ export class ProductosComponent implements OnInit {
     for(let colummns in data[0]){
       this.displayedColumns.push(colummns);
     }
+    this.displayedColumns.push('action')
   }
+
+  
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

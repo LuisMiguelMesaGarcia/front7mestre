@@ -1,3 +1,20 @@
 .full-width-table {
   width: 100%;
+
+}
+
+.button-action{
+  min-width: 60px;
+  border-radius: 5px;
+  border: 0;
+  color:rgb(236, 234, 234);
+}
+.button-action:hover{
+  border: solid 1px rgb(73, 71, 71);
+}
+.button-editar{
+  background-color: rgb(9, 204, 9);
+}
+.button-eliminar{
+  background-color: rgb(233, 6, 6);
 }

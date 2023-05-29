@@ -4,6 +4,7 @@
           <div class="titulo">
               Bienvenidos
           </div>
+          <!--  -->
           <form id="loginform" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <input type="text" name="usuario" formControlName="username" placeholder="Usuario" required>
               <mat-error *ngIf="loginForm.controls['username'].hasError('required')">
@@ -19,7 +20,7 @@
           </form>
           <div class="pie-form">
               <a href="#">¿Perdiste tu contraseña?</a>
-              <a href="registro.html">¿No tienes Cuenta? Registrate</a>
+              <a href="#">¿No tienes Cuenta? Registrate</a>
           </div>
       </div>
       <div class="inferior">

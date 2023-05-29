@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { FormPersonasComponent } from '../Forms/form-personas/form-personas.component';
 
 @Component({
   selector: 'app-persona',
@@ -14,6 +15,7 @@ export class PersonaComponent implements OnInit {
   title: string= "Personas";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
+  formComponente: any = FormPersonasComponent;
 
 
   constructor(public api:ApiService){
@@ -40,6 +42,7 @@ export class PersonaComponent implements OnInit {
     for(let colummns in data[0]){
       this.displayedColumns.push(colummns);
     }
+    this.displayedColumns.push('action')
   }
 
 }

@@ -38,7 +38,7 @@ import { FormPermisosComponent } from './components/Forms/form-permisos/form-per
 import { FormFacturasComponent } from './components/Forms/form-facturas/form-facturas.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule  } from '@angular/material/core';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -84,7 +84,8 @@ import { MatNativeDateModule  } from '@angular/material/core';
     MatPaginatorModule,
     MatSortModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

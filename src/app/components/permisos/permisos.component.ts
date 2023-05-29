@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { FormPermisosComponent } from '../Forms/form-permisos/form-permisos.component';
 
 @Component({
   selector: 'app-permisos',
@@ -13,6 +14,7 @@ export class PermisosComponent implements OnInit {
   title: string= "Permisos";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
+  formComponente: any = FormPermisosComponent;
   
 
   constructor(public api:ApiService){
@@ -39,6 +41,7 @@ export class PermisosComponent implements OnInit {
     for(let colummns in data[0]){
       this.displayedColumns.push(colummns);
     }
+    this.displayedColumns.push('action')
   }
 
 

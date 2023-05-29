@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/Services/api.service';
+import { FormPublicidadComponent } from '../Forms/form-publicidad/form-publicidad.component';
 
 @Component({
   selector: 'app-publicidad',
@@ -13,6 +14,7 @@ export class PublicidadComponent implements OnInit{
   title: string= "Publicidad";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
+  formComponente: any = FormPublicidadComponent;
 
   constructor(public api:ApiService){
     this.dataSource= new MatTableDataSource
@@ -37,6 +39,7 @@ export class PublicidadComponent implements OnInit{
     for(let colummns in data[0]){
       this.displayedColumns.push(colummns);
     }
+    this.displayedColumns.push('action')
   }
 
 }

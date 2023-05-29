@@ -13,6 +13,7 @@ export class RegistroLoginComponent implements OnInit {
   title: string= "Registro Login";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
+  
 
   constructor(public api:ApiService){
     this.dataSource= new MatTableDataSource
