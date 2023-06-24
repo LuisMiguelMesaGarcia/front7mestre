@@ -16,6 +16,7 @@ export class ProductosComponent implements OnInit {
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   formComponente: any = FormProductosComponent;
+  ctrlBack: string= "Productoes"
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

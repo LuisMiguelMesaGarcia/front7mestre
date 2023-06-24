@@ -4,6 +4,39 @@
         <mat-card-title>Invoice Information</mat-card-title>
       </mat-card-header>
       <mat-card-content>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Vendedor" formControlName="vendedor">
+                <!-- for para los vendedores -->
+                <mat-option value="entregado">entregado</mat-option>
+                <!-- <mat-option value="pendiente">pendiente</mat-option>
+                <mat-option value="cancelado">cancelado</mat-option> -->
+              </mat-select>
+              <mat-error *ngIf="invoiceForm.controls['status'].hasError('required')">
+                Status es <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Cliente" formControlName="cliente">
+                <!-- for para los clientes -->
+                <mat-option value="entregado">entregado</mat-option>
+                <!-- <mat-option value="pendiente">pendiente</mat-option>
+                <mat-option value="cancelado">cancelado</mat-option> -->
+              </mat-select>
+              <mat-error *ngIf="invoiceForm.controls['status'].hasError('required')">
+                Status es <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col">
             <mat-form-field appearance="fill">
@@ -23,9 +56,9 @@
           <div class="col">
             <mat-form-field class="full-width">
               <mat-select placeholder="Status" formControlName="status">
-                <mat-option value="canceled">Canceled</mat-option>
-                <mat-option value="purchased">Purchased</mat-option>
-                <mat-option value="in_progress">In Progress</mat-option>
+                <mat-option value="entregado">entregado</mat-option>
+                <mat-option value="pendiente">pendiente</mat-option>
+                <mat-option value="cancelado">cancelado</mat-option>
               </mat-select>
               <mat-error *ngIf="invoiceForm.controls['status'].hasError('required')">
                 Status es <strong>required</strong>
@@ -33,6 +66,7 @@
             </mat-form-field>
           </div>
         </div>
+
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button color="primary" type="submit">Submit</button>

@@ -7,7 +7,7 @@
             <mat-form-field appearance="fill">
               <mat-label>Modulo</mat-label>
               <mat-select formControlName="modulo">
-                <mat-option value="Ventas">Ventas</mat-option>
+                <mat-option value="Permisos">Permisos</mat-option>
                 <mat-option value="Productos">Productos</mat-option>
                 <mat-option value="Clientes">Clientes</mat-option>
               </mat-select>
@@ -18,7 +18,7 @@
               <mat-label>Rol</mat-label>
               <mat-select formControlName="rol">
                 <mat-option value="Administrador">Administrador</mat-option>
-                <mat-option value="Empleado">Empleado</mat-option>
+                <mat-option value="Vendedor">Vendedor</mat-option>
                 <mat-option value="Cliente">Cliente</mat-option>
               </mat-select>
             </mat-form-field>
@@ -27,11 +27,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field appearance="fill">
-              <mat-label>Estado de permiso</mat-label>
-              <mat-select formControlName="estadoPermiso">
-                <mat-option value="Habilitado">Habilitado</mat-option>
-                <mat-option value="Cancelado">Cancelado</mat-option>
-              </mat-select>
+              <mat-label>Permiso</mat-label>
+              <input matInput placeholder="Permisos" formControlName="permiso">
             </mat-form-field>
           </div>
         </div>

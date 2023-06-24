@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-import { RegistroLoginComponent } from './components/registro-login/registro-login.component';
-import { PublicidadComponent } from './components/publicidad/publicidad.component';
+// import { RegistroLoginComponent } from './components/registro-login/registro-login.component';
+// import { PublicidadComponent } from './components/publicidad/publicidad.component';
 import { FacturaComponent } from './components/factura/factura.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { LoginComponent } from './components/login/login.component';
 import { PermisosComponent } from './components/permisos/permisos.component';
-import { CarritoCompraComponent } from './components/carrito-compra/carrito-compra.component';
+// import { CarritoCompraComponent } from './components/carrito-compra/carrito-compra.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './components/menu/menu.component';
@@ -46,13 +46,13 @@ import {MatDialogModule} from '@angular/material/dialog';
   declarations: [
     AppComponent,
     UsuarioComponent,
-    RegistroLoginComponent,
-    PublicidadComponent,
+    // RegistroLoginComponent,
+    // PublicidadComponent,
     FacturaComponent,
     ProductosComponent,
     LoginComponent,
     PermisosComponent,
-    CarritoCompraComponent,
+    // CarritoCompraComponent,
     MenuComponent,
     HomeComponent,
     TablaComponent,

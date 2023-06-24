@@ -6,6 +6,7 @@ import { TablaDataSource, TablaItem } from './tabla-datasource';
 import { ApiService } from 'src/app/Services/api.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog'; 
+import { FormsService } from 'src/app/Services/forms.service';
 
 
 @Component({
@@ -18,11 +19,12 @@ export class TablaComponent implements OnInit {
   @Input() displayedColumns: string[];
   @Input() dataSource: MatTableDataSource<any>;
   @Input() formComponente: any;
+  @Input() ctrlBack: any;
   
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(public api:ApiService, public dialog:MatDialog){
+  constructor(public api:ApiService, public dialog:MatDialog, public form: FormsService){
     this.dataSource= new MatTableDataSource
   }
 
@@ -34,15 +36,30 @@ export class TablaComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-  openDialog(){
+
+  openDialog(element:any){
+    this.form.element.next(element)
     this.dialog.open(this.formComponente)
   }
+
   public eliminarReg(dataobj:any){
-    Swal.fire(
-      'Eliminado',
-    )
-    // console.log(Object.values(dataobj)[0]);
+    Swal.fire({
+      title:'¿Quiere eliminar este campo?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Aceptar',
+      denyButtonText: 'Cancelar'
+
+    }).then((res)=>{
+      if(res.isConfirmed){
+        console.log(Object.values(dataobj)[0])
+        let id = String(Object.values(dataobj)[0])
+        this.api.delete(this.ctrlBack,id)
+        window.location.reload();
+      }
+    })
   }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

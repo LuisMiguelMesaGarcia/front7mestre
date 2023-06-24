@@ -1,35 +1,48 @@
 <form [formGroup]="userForm" novalidate (ngSubmit)="onSubmit()">
-    <mat-card class="user-registration-card">
-      <mat-card-header>
-        <mat-card-title>User Registration</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="row">
-          <div class="col">
-            <mat-form-field class="full-width">
-              <input matInput placeholder="Email" formControlName="email">
-              <mat-error *ngIf="userForm.controls['email'].hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
-              <mat-error *ngIf="userForm.controls['email'].hasError('email')">
-                Email must be a valid email address
-              </mat-error>
-            </mat-form-field>
-          </div>
+  <mat-card class="registration-card">
+    <mat-card-header>
+      <mat-card-title>Registro de Personas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Estado" formControlName="estado">
+              <mat-option value="activo">activo</mat-option>
+              <mat-option value="baneado">baneado</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
-        <div class="row">
-          <div class="col">
-            <mat-form-field class="full-width">
-              <input matInput type="password" placeholder="Password" formControlName="password">
-              <mat-error *ngIf="userForm.controls['password'].hasError('required')">
-                Password is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-          </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="E-mail" formControlName="email">
+            <mat-error *ngIf="userForm.controls['email'].hasError('required')">
+              Email <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
         </div>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit">Register</button>
-      </mat-card-actions>
-    </mat-card>
-  </form>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre" formControlName="nombre">
+            <mat-error *ngIf="userForm.controls['nombre'].hasError('required')">
+              Nombre es <strong>obligatorio</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellidos" formControlName="apellido">
+            <mat-error *ngIf="userForm.controls['apellido'].hasError('required')">
+              Apellidos son <strong>obligatorios</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>      
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color>Enviar</button>
+    </mat-card-actions>
+  </mat-card>
+</form> 

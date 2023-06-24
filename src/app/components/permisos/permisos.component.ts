@@ -12,6 +12,7 @@ import { FormPermisosComponent } from '../Forms/form-permisos/form-permisos.comp
 })
 export class PermisosComponent implements OnInit {
   title: string= "Permisos";
+  ctrlBack: string="ModuloPermisoes";
   displayedColumns: string[];
   dataSource: MatTableDataSource<any>;
   formComponente: any = FormPermisosComponent;
@@ -41,7 +42,7 @@ export class PermisosComponent implements OnInit {
     for(let colummns in data[0]){
       this.displayedColumns.push(colummns);
     }
-    this.displayedColumns.push('action')
+    this.displayedColumns.push('actions')
   }
 
 
